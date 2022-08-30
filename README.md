@@ -8,6 +8,10 @@
 	4.倒计时结束后是否播放提示音；  
 	5.倒计时结束后，是否继续播放PPT，还是关闭PPT；  
 	6.倒计时结束后是否继续计时；  
+	
+它的不足  
+	1.在播放声音的时候倒计时的弹窗会卡顿一下，暂时没有想好如何解决这个多线程的问题  
+	2.在倒计时结束后，PPT播放不能对某个PPT文件进行结束，只能是kill掉PPT进程
 ![image](https://user-images.githubusercontent.com/77780394/187358050-5fb322c4-075a-4efc-973d-07955f0c6fb4.png)  
 
 ![image](https://user-images.githubusercontent.com/77780394/187357774-3aa05863-2ad1-42c6-8fe3-50b6869d81f5.png)
