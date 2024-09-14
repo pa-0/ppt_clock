@@ -1,17 +1,18 @@
 # ppt_clock
-在deepin系统上制作的PPT倒计时工具  
-这个PPT倒计时工具并不完整，功能上还是有缺陷的。  
-它可以完成  
-	1.总时间计时；  
-	2.倒计时前多少分钟进行声音播放提醒；    
-	3.倒计时开始前多少秒进行倒计时；  
-	4.倒计时结束后是否播放提示音；  
-	5.倒计时结束后，是否继续播放PPT，还是关闭PPT；  
-	6.倒计时结束后是否继续计时；  
+PPT countdown tool made on deepin system
+This PPT countdown tool is a work-in-progress and quite buggy.
+
+## What currently works:
+1. Total time measurement;
+2. How many minutes before the countdown will be played as a sound reminder;
+3. How many seconds before the countdown starts;
+4. Whether to play a prompt sound after the countdown ends;
+5. After the countdown ends, whether to continue playing the PPT or close the PPT;
+6. Whether to continue counting after the countdown ends;
 	
-它的不足  
-	1.在播放声音的时候倒计时的弹窗会卡顿一下，暂时没有想好如何解决这个多线程的问题  
-	2.在倒计时结束后，PPT播放不能对某个PPT文件进行结束，只能是kill掉PPT进程  
+## What doesn't:
+1. When playing sound, the countdown pop-up window will freeze for a while. It seems to be a multi-threading issue in the code.
+2. After the countdown ends, the only way to end the PowerPoint process is by killing it, as opposed to the script closing it as intended.
   
 ![image](https://user-images.githubusercontent.com/77780394/187358050-5fb322c4-075a-4efc-973d-07955f0c6fb4.png)  
 
