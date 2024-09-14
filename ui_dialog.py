@@ -9,17 +9,17 @@ from PyQt5.QtCore import *
 class Ui_Dialog:
 
     def setupUi(self,Dialog,num01,num02,num03,tip_end,tip_before,time_continue):
-        Dialog.setWindowTitle("PTT倒计时中")
+        Dialog.setWindowTitle("PowerPoint Clock")
         Dialog.resize(150,80)
         #Dialog.setWindowOpacity(0.3)
-##在右上角位置
+# In the upper right corner
         screen = QDesktopWidget().screenGeometry() 
         size = Dialog.geometry()  
         Dialog.move(screen.width() - size.width(),0)  
 
 #        Dialog.setWindowFlags(Qt.WindowStaysOnTopHint|Qt.Tool)
 #        Dialog.setWindowFlags(Dialog.windowFlags()|Qt.WindowStaysOnTopHint|Qt.Tool)
-##取消标题栏及画面置顶
+# Cancel title bar and screen top
         Dialog.setWindowFlags(Qt.FramelessWindowHint|Qt.WindowStaysOnTopHint|Qt.Tool)
         layout = QGridLayout(Dialog)
         Dialog.setLayout(layout)
@@ -28,7 +28,7 @@ class Ui_Dialog:
         #    Dialog.setStyleSheet(style)
 
 
-##圆角样式
+## rounded corner style
         rect = QRectF(0, 0, Dialog.width(), Dialog.height())
         path = QPainterPath()
         path.addRoundedRect(rect, 20, 20)
@@ -36,11 +36,11 @@ class Ui_Dialog:
         region = QRegion(polygon)
         Dialog.setMask(region)
         
-##右键关闭功能创建
+# Right click to close function creation
         Dialog.setContextMenuPolicy(Qt.CustomContextMenu)
         Dialog.customContextMenuRequested.connect(Dialog.create_rightmenu)
 
-##从self中传递参数到Dialog中
+# Pass parameters from self to dialog
         Dialog.tip_end=tip_end
         Dialog.tip_before=tip_before
         Dialog.time_continue=time_continue
@@ -51,8 +51,8 @@ class Ui_Dialog:
         Dialog.show()
         Dialog.time=int(num01)
         
-##倒计时器功能
-        Dialog.label = QLabel("<font color=red size=5 > <b>倒计时%s分钟</b>" % (Dialog.time))
+# Countdown timer function
+        Dialog.label = QLabel("<font color=red size=5 > <b>Countdown %s minutes</b>" % (Dialog.time))
         Dialog.label.setAlignment(Qt.AlignCenter)
         layout.addWidget(Dialog.label, 0, 0, 1, 2)
         Dialog.time_before=Dialog.time*60
